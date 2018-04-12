@@ -7,7 +7,12 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-		'db' => require(__DIR__ . '/db.php'),
+		'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=yii2',
+            'username' => 'root',
+            'password' => '',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
